@@ -13,8 +13,8 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-  background-color: #131327;
-    color: #000000;
+  background-color: #13132793;
+    color: #ffffff;
     display: flex;
     height: 7vw;
     width: 100%;
@@ -23,6 +23,7 @@ nav {
     padding: 0 1%;
     z-index: 5;
     margin: auto;
+    blur(5)
 }
 
 nav img {
@@ -64,7 +65,7 @@ nav h1 {
 }
  
 .search input {
-    background-color: #E7DDC2;
+    background-color: #710bbe;
     border: none;
     border-radius: 1vw 0 0 1vw;
     color: #614c4c;
