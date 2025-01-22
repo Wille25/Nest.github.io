@@ -9,12 +9,14 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    animation: fadeInSlideUp 0.5s ease-in-out;
 }
 
 h1, h2, h3 {
     color: #fff;
     margin: 0;
     padding: 0.5em 0;
+    animation: fadeInSlideUp 0.5s ease-in-out;
 }
 
 h2, h3 {
@@ -63,6 +65,7 @@ nav {
     z-index: 5;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     margin: auto;
+    animation: fadeInSlideDown 0.5s ease-in-out;
 }
 
 nav img {
@@ -149,6 +152,7 @@ nav h1 {
     user-select: none;
     transition: transform .2s, box-shadow .2s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeInZoom 0.5s ease-in-out;
 }
 
 #games img:hover {
@@ -190,6 +194,7 @@ nav h1 {
     user-select: none;
     transition: all .2s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeInZoom 0.5s ease-in-out;
 }
 
 .featured img:hover {
@@ -247,4 +252,45 @@ nav h1 {
     font-size: 3vw; /* Increase font size */
     text-align: center;
     color: #ffffff;
+    font-family: 'Quicksand', serif; /* Change font to Quicksand */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+@keyframes fadeInMinimal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInSlideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInSlideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInZoom {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
 }
