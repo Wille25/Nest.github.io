@@ -1,0 +1,208 @@
+:root {
+  --background-color: #060611;
+  --tab-background: #0e0e1d;
+  --tab-border: #372754;
+  --text-color: #ffffff;
+  --accent-color: #ba7df2;
+  --hover-color: #8e57d3;
+  --transition-speed: 0.3s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--accent-color);
+  cursor: pointer;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin: 1.5rem 0;
+  transition: transform var(--transition-speed), color var(--transition-speed);
+}
+
+h1:hover {
+  transform: scale(1.1);
+  color: var(--hover-color);
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+#__shadow-search-bar {
+  padding: 10px;
+  border: 2px solid var(--tab-border);
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: var(--tab-background);
+  transition: border-color 0.2s ease;
+  width: 25vw;
+}
+
+#__shadow-search-bar::placeholder {
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+#__shadow-search-bar:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+
+.gcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.g {
+  width: 200px;
+  height: 250px;
+  background-color: var(--tab-background);
+  border: 1px solid var(--tab-border);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.g:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.game-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.game-name {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color var(--transition-speed);
+}
+
+.icon-button:hover {
+  color: var(--hover-color);
+}
+
+.gDisplay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  right: 0;
+  bottom: 0;
+  display: none;
+  flex-direction: column;
+  background-color: var(--background-color);
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.gDisplay.active {
+  display: flex;
+  overflow: hidden; 
+}
+
+.gDisplay .nav-controls {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--background-color);
+  border-top: 2px solid var(--tab-border);
+  border-bottom: 2px solid var(--tab-border);
+}
+
+.gDisplay .logo {
+  display: flex;
+  align-items: center;
+}
+
+.gDisplay .gDisplayimg {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.gDisplay .gDisplayname {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.gDisplay .controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.gDisplay .controls button {
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.gDisplay .controls button:hover {
+  transform: scale(1.1);
+}
+
+.gDisplay .controls svg {
+  fill: var(--text-color);
+  width: 24px;
+  height: 24px;
+}
+
+.gDisplay iframe {
+  flex: 1;
+  border: none;
+  overflow: hidden; 
+  width: 100%;
+  height: 100%;
+  background-color: var(--tab-background);
+}

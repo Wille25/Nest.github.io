@@ -2,14 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
 
 body {
-    background: linear-gradient(to bottom, #0f1e3d, #1a2b5c), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 10 10"><polygon points="0,10 5,0 10,10" fill="%23ffffff" opacity="0.1"/></svg>');
-    background-size: cover, 10%;
-    font-family: 'Berkshire Swash', serif; /* Change principal font to Berkshire Swash */
+    background: linear-gradient(135deg, #0f1e3d 0%, #1a2b5c 100%);
+    background-size: cover;
+    font-family: 'Berkshire Swash', serif;
     color: #ffffff;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     animation: fadeInSlideUp 0.5s ease-in-out;
+    min-height: 100vh; /* Ensure the gradient covers the full viewport height */
 }
 
 h1, h2, h3 {
@@ -57,15 +58,16 @@ nav {
     background-color: rgba(30, 30, 67, 0.8);
     color: #ffffff;
     display: flex;
-    height: 7vw;
+    flex-direction: column;  /* Stack items vertically */
+    align-items: center;     /* Center align horizontally */
+    height: auto;           /* Allow height to adjust to content */
     width: 100%;
-    align-items: center;
-    justify-content: center; /* Center align the text */
-    padding: 0 2%;
+    padding: 0.3vw 2%; /* Reduced padding */
     z-index: 5;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     margin: auto;
     animation: fadeInSlideDown 0.5s ease-in-out;
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth hiding */
 }
 
 nav img {
@@ -80,10 +82,39 @@ nav img {
 }
 
 nav h1 {
-    font-size: 4vw;
+    font-size: 2.5vw; /* Smaller font size */
     font-weight: 900;
     margin-right: 1%;
     font-family: 'Quicksand', serif; /* Change font to Quicksand */
+    margin-bottom: 0.1vw; /* Reduced margin */
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 0.4vw; /* Reduced gap */
+    margin-top: 0.1vw; /* Reduced margin */
+    margin-bottom: 0.3vw; /* Reduced margin */
+}
+
+.nav-buttons button {
+    background-color: #0f1e3d ; /* Match the purple theme */
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Subtle border */
+    border-radius: 0.3vw;
+    color: #ffffff; /* White text */
+    font-size: 1vw;
+    font-weight: 600;
+    padding: 0.4vw 0.8vw;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Quicksand', serif; /* Match the page font */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.nav-buttons button:hover {
+    background-color: rgba(113, 11, 190, 1); /* Brighter on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
 }
 
 .content {
@@ -156,6 +187,31 @@ nav h1 {
 }
 
 #games img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+#retro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.3vw;
+    padding-bottom: 5vw;
+}
+
+#retro img {
+    height: 15.6vw;
+    width: 15.6vw;
+    border-radius: 1vw;
+    margin: .5vw;
+    cursor: pointer;
+    user-select: none;
+    transition: transform .2s, box-shadow .2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeInZoom 0.5s ease-in-out;
+}
+
+#retro img:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
@@ -253,6 +309,46 @@ nav h1 {
     text-align: center;
     color: #ffffff;
     font-family: 'Quicksand', serif; /* Change font to Quicksand */
+}
+
+.contact-email {
+    color: #d9d9d9;
+    text-decoration: none;
+    font-family: 'Quicksand', serif;
+    font-size: 2vw;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease;
+}
+
+.contact-email:hover {
+    color: #710bbe;
+    text-decoration: underline;
+}
+
+.alt-site {
+    text-align: center;
+    margin: 2vw 0;
+}
+
+.alt-button {
+    background-color: #0f1e3d;
+    color: #ffffff;
+    padding: 0.8vw 2vw;
+    border-radius: 0.5vw;
+    text-decoration: none;
+    font-family: 'Quicksand', serif;
+    font-size: 1.5vw;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.alt-button:hover {
+    background-color: rgba(113, 11, 190, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes fadeIn {
