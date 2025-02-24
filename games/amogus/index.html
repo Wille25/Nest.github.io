@@ -1,68 +1,58 @@
-<!-- Red-Crewmate -->
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+        <title>Among US Online v3</title>
+    <meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+	
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+        var unityInstance = UnityLoader.instantiate("unityContainer", "Build/AmongUs2019_WebGL.json", {onProgress: UnityProgress});
+		window.SDK_OPTIONS = {
+		  gameId: "n2294odux88zuqkl35s7rjoyns90cebj",
+		  onEvent: function (a) {
+			 switch (a.name) {
+				case "SDK_GAME_PAUSE":
+				   // pause game logic / mute audio
+				   break;
+				case "SDK_GAME_START":
+				   // advertisement done, resume game logic and unmute audio
+				   break;
+				case "SDK_READY":
+				   sdk.showBanner();
+				   break;
+			 }
+		  }
+	   };
+	(function (a, b, c) {
+	   var d = a.getElementsByTagName(b)[0];
+	   a.getElementById(c) || (a = a.createElement(b), a.id = c, a.src = "https://api.gamemonetize.com/sdk.js", d.parentNode.insertBefore(a, d))
+	})(document, "script", "gamemonetize-sdk"); 
+	
+	setInterval(function () {
+		if (typeof sdk !== 'undefined' && sdk.showBanner !== 'undefined') {
+		sdk.showBanner();
+	}
+	}, 75000);
+    </script>
+	
+    <style>
+		html, body {
+			margin:0;
+			padding:0;
+		}
+		.webgl-content { width: 100%; height: 100vh; }
+	</style>
 
-<html>
-  <div class ="among us" >
-    <div class="red-crew">
-      <div class="body-light-part-1"></div>
-      <div class="face">
-        <div class="face-light-part">
-          <div class="shimmer"></div>
-        </div>
-      </div>
-      <div class="backpack-1">
-        <div class="backpack-light-part"></div>
-      </div>
-      <div class="leg-left-under-1"></div>
-      <div class="leg-left-1"></div>
-      <div class="leg-right-under-1"></div>
-      <div class="leg-right-1"></div>
-    </div>
-  </div>
+  </head>
+  <body>
+	</div>
+		<div class="webgl-content" id="unityContainer">
+		</div>
+	</div>		
+	</div>
+  </body>
 </html>
-
-<!-- Black-Crewmate -->
-
-<html>
-  <div>
-    <div class= "black-crew">
-      <div class="body-light-part-2"></div>
-      <div class="face">
-        <div class="face-light-part">
-          <div class="shimmer"></div>
-        </div>
-      </div>
-      <div class="backpack-2">
-        <div class="backpack-light-part"></div>
-      </div>
-      <div class="leg-left-under-2"></div>
-      <div class="leg-left-2"></div>
-      <div class="leg-right-under-2"></div>
-      <div class="leg-right-2"></div>
-    </div>
-  </div>
-</html>
-
-<!-- <html><h1 class = "header">AMONG US</h1></html> -->
-
-
-
-<!-- Report Button -->
-<!-- 
- <img class = "report" onclick="snd.play()" src = "https://vignette.wikia.nocookie.net/among-us-wiki/images/7/75/Report-0.png/revision/latest?cb=20201002163303"> 
-
-<script>
-    var snd = new Audio("https://vignette.wikia.nocookie.net/among-us-wiki/images/3/38/DeadBodyReported.ogg/revision/latest?cb=20200913183144"); 
-</script>
- -->
-<!-- Kill Button -->
-
-<!-- <img class= "kill" onclick="snd2.play()" src = "https://vignette.wikia.nocookie.net/among-us-wiki/images/0/01/Kill.png/revision/latest?cb=20200915212207"> 
-
-<script>
-    var snd2 = new Audio("https://vignette.wikia.nocookie.net/among-us-wiki/images/3/34/Impostor_kill.ogg/revision/latest?cb=20200901170616"); 
-</script> -->
-
-<!-- Credits -->
-
-<!--   <div id="credit"><span>by Pranaav All Right Reserved</span></div>
-</div> -->
